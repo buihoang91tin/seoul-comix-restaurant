@@ -8,13 +8,13 @@ Make sure you have the following installed:
 - **Node.js** (v18+ recommended)
 - **PostgreSQL** (Running database instance)
 - **Prisma** ORM
-- **pnpm** (or npm/yarn)
+- **npm** (or pnpm/yarn)
 
 ---
 
 ### 2️⃣ Install Dependencies
 ```sh
-pnpm install  # Or use npm install / yarn install
+npm install  # Or use pnpm install / yarn install
 ```
 
 ---
@@ -31,15 +31,15 @@ Replace `USER`, `PASSWORD`, and `your_database` with your actual PostgreSQL cred
 ### 4️⃣ Setup the Database
 Run Prisma migrations and seed the database:
 ```sh
-pnpm prisma migrate dev
-pnpm prisma db seed
+npm prisma migrate dev
+npm prisma db seed
 ```
 
 ---
 
 ### 5️⃣ Start the Development Server
 ```sh
-pnpm dev  # Runs on http://localhost:3000
+npm dev  # Runs on http://localhost:3000
 ```
 
 ---
@@ -117,8 +117,8 @@ curl -X GET http://localhost:3000/api/trpc/getRestaurants
 ## 🔥 Deployment
 For production deployment, use:
 ```sh
-pnpm build
-pnpm start
+npm build
+npm start
 ```
 
 You can deploy on **Vercel, Railway, or Fly.io** with PostgreSQL support.
