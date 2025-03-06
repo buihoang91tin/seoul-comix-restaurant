@@ -127,15 +127,17 @@ async function main() {
   ];
 
   for (const restaurant of restaurants) {
-      await prisma.post.create({
+      await prisma.restaurant.create({
           data: {
               id: restaurant.id,
               rating: restaurant.rating,
               ratingCount: restaurant.rating_count,
+              city: restaurant.city,
               category: restaurant.category,
               desc: restaurant.desc,
               images: restaurant.images,
               name: restaurant.name,
+              priceRange: restaurant.price_range,
               featured: {
                 create: {
                   text: restaurant.featured.text,
