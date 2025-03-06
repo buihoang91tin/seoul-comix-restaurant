@@ -11,7 +11,7 @@ type RestaurantPostProps = {
 
 const RestaurantPost: React.FC<RestaurantPostProps> = ({ restaurant, toggleFavorite, loadingId }) => {
   return (
-    <div key={restaurant.id} className="bg-white dark:bg-gray-900 rounded-lg ">
+    <div key={restaurant.id} className="bg-white dark:bg-gray-900 rounded-lg " data-testid="restaurant-post">
       {/* Image */}
       <div className="rounded-xl overflow-hidden mb-3 relative ">
         <ImageSlider images={restaurant.images} name={restaurant.name} />
@@ -20,11 +20,12 @@ const RestaurantPost: React.FC<RestaurantPostProps> = ({ restaurant, toggleFavor
           type="button"
           className={`mt-2 text-sm font-medium rounded-full px-2 py-2 absolute top-1 right-2 z-9 cursor-pointer ${
             restaurant.isFavorite
-              ? 'text-red-600 bg-red-100 dark:bg-red-900 dark:text-red-300'
+              ? 'text-red-600 bg-red-100 dark:bg-red-900 dark:text-red-300 favorite'
               : 'text-white bg-unfavorite dark:bg-white-400 dark:text-gray-300'
           }`}
           onClick={toggleFavorite}
           disabled={loadingId === restaurant.id}
+          name={`favorite-${restaurant.id}`}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
