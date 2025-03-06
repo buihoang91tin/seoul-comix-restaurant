@@ -3,13 +3,13 @@ import { trpc } from "@/utils/trpc";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import FilterBar from "@/components/FilterBar/FilterBar";
 import RestaurantPost from "@/components/RestaurantPost/RestaurantPost";
+import PostSkeleton from "@/components/PostSkeleton/PostSkeleton";
 import { useState, useEffect } from "react";
 
 import { Restaurant } from "@/types";
 
 
 export default function Home() {
-  // const { data: initialRestaurants, isLoading, error } = trpc.getRestaurants.useQuery();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const toggleFavoriteMutation = trpc.toggleFavoriteRestaurant.useMutation();
   const [loadingId, setLoadingId] = useState<string | null>(null);
@@ -58,15 +58,21 @@ export default function Home() {
       <FilterBar />
 
       {/* Restaurant Grid */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-neutral-600">
-        {restaurants?.map((restaurant) => (
-          <RestaurantPost
-            key={restaurant.id}
-            restaurant={restaurant}
-            toggleFavorite={() => handleFavorite(restaurant.id)}
-            loadingId={loadingId}
-          />
-        ))}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-neutral-600 w-full max-w-7xl">
+      {restaurants.length === 0 ? (
+          Array.from({ length: 8 }).map((_, index) => (
+            <PostSkeleton key={index} />
+          ))
+        ) : (
+          restaurants.map((restaurant) => (
+            <RestaurantPost
+              key={restaurant.id}
+              restaurant={restaurant}
+              toggleFavorite={() => handleFavorite(restaurant.id)}
+              loadingId={loadingId}
+            />
+          ))
+        )}
       </div>
     </div>
 

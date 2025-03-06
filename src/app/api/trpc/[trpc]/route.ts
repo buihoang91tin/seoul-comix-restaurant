@@ -2,7 +2,7 @@ import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 import { appRouter } from '@/server/api/trpc';
 import { createContext } from '@/server/api/context';
 
-// export const runtime = 'nodejs';  // Use this if you're running in a Node.js environment
+// export const runtime = "edge"; // Ensure this runs as an Edge Function
 export const maxDuration = 60; // seconds
 export const dynamic = 'force-dynamic';
 

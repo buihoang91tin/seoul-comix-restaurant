@@ -1,4 +1,4 @@
-# NextJs Starter Sample
+# Comix Restaurant
 ## Next.js 15 + tRPC + PostgreSQL Project
 
 ## 🚀 Project Setup
@@ -46,23 +46,36 @@ pnpm dev  # Runs on http://localhost:3000
 
 ## 🛠 API Routes
 
-### ➤ **Get Posts**
+### ➤ **Get Restaurants**
 Fetch all posts.
 ```
-GET /api/trpc/getPosts
+GET /api/trpc/getRestaurants
 ```
 #### **Example Request (Browser/Postman/cURL)**
 ```sh
-curl -X GET http://localhost:3000/api/trpc/getPosts
+curl -X GET http://localhost:3000/api/trpc/getRestaurants
 ```
 #### **Response Example**
 ```json
 {
-  "id": "4dc2e1d1-fe89-4a29-b86a-f8bb0ce1395d",
-  "name": "The standard Lorem Ipsum passage, used since the 1500s",
-  "category": "YAKITORI",
-  "rating": 4.2,
-  "isFavorite": true
+  "id": "8ce5g4f3-jg09-7c40-e98c-i1ee3ff3408f",
+  "name": "텐푸라 마츠야",
+  "desc": "바삭한 텐푸라를 맛볼 수 있는",
+  "rating": 4.3,
+  "ratingCount": 220,
+  "category": "TEMPURA",
+  "images": [
+    "https://images.unsplash.com/photo-1593357871477-00fd350cc0f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1593357871477-00fd350cc0f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1593357871477-00fd350cc0f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ],
+  "isFavorite": true,
+  "featured": {
+    "id": "11169801-57bb-4a42-b517-19c36e3e23f0",
+    "text": "나고야 최고의 텐푸라집",
+    "icon": "stars-02",
+    "restaurantId": "8ce5g4f3-jg09-7c40-e98c-i1ee3ff3408f"
+  }
 }
 ```
 
@@ -85,6 +98,14 @@ curl -X GET http://localhost:3000/api/trpc/getPosts
 ├── 📂 prisma
 │   ├── 📜 schema.prisma           # Database schema
 │   ├── 📜 seed.ts                 # Seed data
+│
+├── 📂 src
+│   ├── 📂 app           
+│   ├── 📂 components 
+│   ├── 📂 constants
+│   ├── 📂 server
+│   ├── 📂 types
+│   ├── 📂 utils
 │
 ├── 📜 .gitignore
 ├── 📜 package.json
