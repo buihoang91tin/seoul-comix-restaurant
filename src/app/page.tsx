@@ -5,9 +5,7 @@ import FilterBar from "@/components/FilterBar/FilterBar";
 import RestaurantPost from "@/components/RestaurantPost/RestaurantPost";
 import PostSkeleton from "@/components/PostSkeleton/PostSkeleton";
 import { useState, useEffect } from "react";
-
 import { Restaurant } from "@/types";
-
 
 export default function Home() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
@@ -17,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('/api/trpc/getRestaurants'); // Replace with your API endpoint
+        const response = await fetch('/api/trpc/getRestaurants'); 
         const result = await response.json();
         const initialRestaurants = result.result?.data;
         const sortedRestaurants = [...initialRestaurants].sort((a, b) => a.id.localeCompare(b.id));
