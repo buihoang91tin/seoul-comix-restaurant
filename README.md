@@ -46,22 +46,21 @@ pnpm dev  # Runs on http://localhost:3000
 
 ## 🛠 API Routes
 
-### ➤ **Get Restaurants**
-Fetch all restaurants.
+### ➤ **Get Posts**
+Fetch all posts.
 ```
-GET /api/trpc/getRestaurants
+GET /api/trpc/getPosts
 ```
 #### **Example Request (Browser/Postman/cURL)**
 ```sh
-curl -X GET http://localhost:3000/api/trpc/getRestaurants
+curl -X GET http://localhost:3000/api/trpc/getPosts
 ```
 #### **Response Example**
 ```json
 {
   "id": "4dc2e1d1-fe89-4a29-b86a-f8bb0ce1395d",
-  "name": "카구라자카 이시카와 스시하루 나카노시마 스시야",
+  "name": "The standard Lorem Ipsum passage, used since the 1500s",
   "category": "YAKITORI",
-  "city": "osaka",
   "rating": 4.2,
   "isFavorite": true
 }
@@ -103,6 +102,11 @@ pnpm start
 
 You can deploy on **Vercel, Railway, or Fly.io** with PostgreSQL support.
 
+---
+
+## 👨‍💻 Contributors
+- **Hoang Bui** - Full Stack Developer
+- Open to contributions!
 
 ---
 
