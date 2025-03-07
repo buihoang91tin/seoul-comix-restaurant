@@ -1,6 +1,8 @@
 # Comix Restaurant
 ## Next.js 15 + tRPC + PostgreSQL Project
 
+Live Demo: https://comix-restaurant.vercel.app/
+
 ## 🚀 Project Setup
 
 ### 1️⃣ Prerequisites
